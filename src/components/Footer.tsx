@@ -1,9 +1,11 @@
 import Link from "next/link";
+import Image from "next/image";
 import { Mail, Phone, MapPin, Globe, ExternalLink, ArrowUpRight } from "lucide-react";
 import { company } from "@/config/company";
 import { contact } from "@/config/contact";
 import { social } from "@/config/social";
 import { branding } from "@/config/branding";
+import { assets } from "@/config/assets";
 import { footerLinks } from "@/config/navigation";
 
 export default function Footer() {
@@ -14,9 +16,13 @@ export default function Footer() {
           {/* Brand */}
           <div className="sm:col-span-2 lg:col-span-1">
             <Link href="/" className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-accent)] flex items-center justify-center text-white font-bold text-sm">
-                {branding.logoInitial}
-              </div>
+              <Image
+                src={assets.logo}
+                alt={company.name}
+                width={32}
+                height={32}
+                className="w-8 h-8 rounded-lg object-contain"
+              />
               <span className="text-lg font-bold">{company.name}</span>
             </Link>
             <p className="text-sm text-[var(--color-text-muted)] mb-6 leading-relaxed">

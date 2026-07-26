@@ -2,11 +2,12 @@
 
 import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { company } from "@/config/company";
-import { branding } from "@/config/branding";
+import { assets } from "@/config/assets";
 import { navLinks } from "@/config/navigation";
 
 export default function Navbar() {
@@ -62,9 +63,14 @@ export default function Navbar() {
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-20">
             <Link href="/" className="flex items-center gap-2 group">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-accent)] flex items-center justify-center text-white font-bold text-sm">
-                {branding.logoInitial}
-              </div>
+              <Image
+                src={assets.logo}
+                alt={company.name}
+                width={32}
+                height={32}
+                className="w-8 h-8 rounded-lg object-contain"
+                priority
+              />
               <span className="text-lg font-bold tracking-tight">
                 {company.name}
               </span>
@@ -114,9 +120,14 @@ export default function Navbar() {
         <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-16 lg:h-20">
             <Link href="/" className="flex items-center gap-2 group" onClick={closeMenu}>
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-[var(--color-primary)] to-[var(--color-accent)] flex items-center justify-center text-white font-bold text-sm">
-                {branding.logoInitial}
-              </div>
+              <Image
+                src={assets.logo}
+                alt={company.name}
+                width={32}
+                height={32}
+                className="w-8 h-8 rounded-lg object-contain"
+                priority
+              />
               <span className="text-lg font-bold tracking-tight">
                 {company.name}
               </span>
