@@ -247,3 +247,5 @@ npm run dev
 3. Allow Node.js through Windows Defender Firewall when prompted.
 4. Disconnect from any VPN.
 5. Try pinging your computer's IP from another device to verify connectivity.
+
+<!-- CI/CD verification: 2026-07-26 automated deployment pipeline test -->
