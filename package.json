@@ -4,10 +4,14 @@
   "private": true,
   "scripts": {
     "setup": "node scripts/setup.js",
+    "generate-assets": "node scripts/generate-assets.mjs",
+    "predev": "npm run generate-assets",
     "dev": "node scripts/dev.js",
+    "prebuild": "npm run generate-assets",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "prepare": "npm run generate-assets"
   },
   "dependencies": {
     "framer-motion": "^12.42.2",
